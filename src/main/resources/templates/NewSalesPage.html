@@ -1,0 +1,25 @@
+<html lang="rus" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link th:insert = "~{Head}">
+</head>
+<body>
+<div th:insert = "~{NavBar}"></div>
+<form th:action="@{'/addItem'}" method="post" class="w-50 mx-auto">
+    <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Название товара</label>
+        <input type="text" class="form-control" name="name" id="formGroupExampleInput" placeholder="Введите название">
+    </div>
+    <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Описание товара</label>
+        <input type="text" class="form-control" name="description" id="formGroupExampleInput2" placeholder="Введите описание">
+    </div>
+    <div class="mb-3">
+        <label for="formGroup" class="form-label">Цена товара</label>
+        <input type="text" class="form-control" name="price" id="formGroup" placeholder="Введите цену">
+    </div>
+    <button type="submit" class="btn btn-warning mx-auto">Добавить</button>
+</form>
+</body>
+</html>

@@ -5,6 +5,7 @@ import JavaProBitLab.Model.Items;
 import java.util.ArrayList;
 
 public class DBManager {
+     private static Long id = 5L;
      public static ArrayList<Items> arr = new ArrayList<>();
 
         static {
@@ -29,5 +30,17 @@ public class DBManager {
                     item = new Items(id, name, deskript, price);
             }
         return item;
+    }
+
+    public static boolean addItem(String name, String description, double price){
+            boolean b;
+            if (name != null & description != null & price > 0) {
+                arr.add(new Items(id, name, description, price));
+                id++;
+                b = true;
+            } else {
+                b = false;
+            }
+            return b;
     }
 }
