@@ -17,4 +17,17 @@ public class DBManager {
     public static ArrayList<Items> getAllItems(){
             return arr;
     }
+
+    public static Items getDetails(Long idDetails){
+            Items item = new Items();
+            for (Items i : arr) {
+                Long id = i.getId();
+                String name = i.getName();
+                String deskript = i.getDescription();
+                double price = i.getPrice();
+                if (id == idDetails)
+                    item = new Items(id, name, deskript, price);
+            }
+        return item;
+    }
 }
