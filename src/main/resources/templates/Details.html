@@ -1,0 +1,21 @@
+<html lang="rus" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Главная</title>
+  <link th:insert = "~{Head}">
+</head>
+<body>
+<div th:insert = "~{NavBar}"></div>
+  <div class="row p-3 mb-2" th:each="it : ${DetailsTovar}">
+    <div class="col-8 w-50 mx-auto text-center w-25">
+      <div class="card px-0">
+        <h3 th:text="${it.getName()}"></h3>
+        <div class="card-body">
+          <b th:text="${it.getDescription()}"></b>
+          <p class="card-text" th:text="${it.getPrice()}"></p>
+        </div>
+      </div>
+  </div>
+  </div>
+</body>
+</html>
